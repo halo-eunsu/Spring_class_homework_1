@@ -16,15 +16,6 @@ import java.util.stream.Collectors;
 @Component
 public class DefaultStudentService implements StudentService {
 
-    private final Students studentsRepository;
-    private final Scores scoresRepository;
-
-    @Autowired
-    public DefaultStudentService(Students studentsRepository, Scores scoresRepository) {
-        this.studentsRepository = studentsRepository;
-        this.scoresRepository = scoresRepository;
-    }
-
 
     @Override
     public Collection<Student> getPassedStudents() {
