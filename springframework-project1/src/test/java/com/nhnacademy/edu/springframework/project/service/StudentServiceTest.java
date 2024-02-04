@@ -7,6 +7,8 @@ import com.nhnacademy.edu.springframework.project.repository.CsvScores;
 import com.nhnacademy.edu.springframework.project.repository.CsvStudents;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 
@@ -14,10 +16,13 @@ import java.util.Collection;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
+@Component
 class StudentServiceTest {
 
 
 
+    @Autowired
     private StudentService studentService;
 
     @BeforeEach

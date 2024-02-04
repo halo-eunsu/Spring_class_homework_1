@@ -1,8 +1,10 @@
 package com.nhnacademy.edu.springframework.project.service;
 
 import com.nhnacademy.edu.springframework.project.repository.CsvStudents;
+import com.nhnacademy.edu.springframework.project.repository.Scores;
 import com.nhnacademy.edu.springframework.project.repository.StudentService;
 import com.nhnacademy.edu.springframework.project.repository.Students;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
@@ -13,6 +15,17 @@ import java.util.stream.Collectors;
 
 @Component
 public class DefaultStudentService implements StudentService {
+
+    private final Students studentsRepository;
+    private final Scores scoresRepository;
+
+    @Autowired
+    public DefaultStudentService(Students studentsRepository, Scores scoresRepository) {
+        this.studentsRepository = studentsRepository;
+        this.scoresRepository = scoresRepository;
+    }
+
+
     @Override
     public Collection<Student> getPassedStudents() {
         Students studentRepository = CsvStudents.getInstance();
