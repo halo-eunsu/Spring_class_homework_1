@@ -18,6 +18,7 @@ public class CsvScores implements Scores {
      **/
 
 
+
     public static Scores getInstance() {
         if (instance == null) {
             instance = new CsvScores();
