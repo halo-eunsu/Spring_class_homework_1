@@ -33,25 +33,25 @@ class GradeQueryServiceTest {
         List<Score> scores = gradeQueryService.getScoreByStudentName(studentName);
 
 
-        assertFalse(scores.isEmpty(), "Scores should not be empty for student name: " + studentName);
+        assertFalse(scores.isEmpty(), "학생 이름과 대응하는 점수는 비워둘 수 없습니다: " + studentName);
 
 
 
 
 
-        assertTrue(scores.stream().anyMatch(score -> score.getScore() == 30), "Expected score not found for student name: " + studentName);
+        assertTrue(scores.stream().anyMatch(score -> score.getScore() == 30), "학생 이름에 대한 예상 점수를 찾을 수 없습니다.: " + studentName);
     }
 
     @Test
     void getScoreByStudentSeq() {
 
-        int studentSeq = 1; // 예시 시퀀스 번호, 실제 데이터에 맞게 조정 필요
+        int studentSeq = 1;
         Score score = gradeQueryService.getScoreByStudentSeq(studentSeq);
 
 
-        assertNotNull(score, "Score should not be null for student sequence: " + studentSeq);
+        assertNotNull(score, "학생의 점수는 null이 될 수 없습니다.: " + studentSeq);
 
 
-        assertEquals(30, score.getScore(), "Score does not match expected value for student sequence: " + studentSeq);
+        assertEquals(30, score.getScore(), "점수가 학생의 예상 값과 일치하지 않습니다.: " + studentSeq);
     }
 }

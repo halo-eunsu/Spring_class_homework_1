@@ -27,29 +27,29 @@ class StudentsTest {
     void load() {
 
         Collection<Student> loadedStudents = students.findAll();
-        assertFalse(loadedStudents.isEmpty(), "Students should not be empty after loading data");
+        assertFalse(loadedStudents.isEmpty(), "학생란은 비면 안됩니다.");
     }
 
     @Test
     void findAll() {
 
         Collection<Student> allStudents = students.findAll();
-        assertTrue(allStudents.size() > 0, "findAll should return a list with elements");
+        assertTrue(allStudents.size() > 0, "리스트를 반환해야 합니다.");
     }
 
     @Test
     void merge() {
 
         Student firstStudentBeforeMerge = students.findAll().iterator().next();
-        assertNull(firstStudentBeforeMerge.getScore(), "Student score should be null before merge");
+        assertNull(firstStudentBeforeMerge.getScore(), "merge 전 데이터는 null이어야 합니다.");
 
 
         students.merge(scores.findAll());
 
 
         Student firstStudentAfterMerge = students.findAll().iterator().next();
-        assertNotNull(firstStudentAfterMerge.getScore(), "Student score should not be null after merge");
+        assertNotNull(firstStudentAfterMerge.getScore(), "merge 이후 데이터는 null이 될 수 없습니다.");
 
-        assertEquals(firstStudentAfterMerge.getSeq(), firstStudentAfterMerge.getScore().getStudentSeq(), "Student sequence should match score sequence");
+        assertEquals(firstStudentAfterMerge.getSeq(), firstStudentAfterMerge.getScore().getStudentSeq(), "학생과 점수는 일치해야 합니다.");
     }
 }
