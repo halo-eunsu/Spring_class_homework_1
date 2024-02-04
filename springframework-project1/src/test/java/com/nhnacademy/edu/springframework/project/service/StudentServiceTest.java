@@ -36,10 +36,10 @@ class StudentServiceTest {
         Collection<Student> passedStudents = studentService.getPassedStudents();
 
 
-        assertFalse(passedStudents.isEmpty(), "There should be passed students");
+        assertFalse(passedStudents.isEmpty(), "합격한 학생이 있어야 합니다.");
 
 
-        passedStudents.forEach(student -> assertTrue(student.getScore().getScore() >= 60, "Passed student should have score >= 60"));
+        passedStudents.forEach(student -> assertTrue(student.getScore().getScore() >= 60, "합격한 학생의 점수는 60점 이상이어야 합니다."));
     }
 
     @Test
@@ -48,13 +48,13 @@ class StudentServiceTest {
         Collection<Student> studentsOrderedByScore = studentService.getStudentsOrderByScore();
 
 
-        assertFalse(studentsOrderedByScore.isEmpty(), "There should be students ordered by score");
+        assertFalse(studentsOrderedByScore.isEmpty(), "점수순으로 정렬된 학생이 있어야 합니다.");
 
 
         Student previousStudent = null;
         for (Student student : studentsOrderedByScore) {
             if (previousStudent != null) {
-                assertTrue(previousStudent.getScore().getScore() <= student.getScore().getScore(), "Students should be ordered by score ascendingly");
+                assertTrue(previousStudent.getScore().getScore() <= student.getScore().getScore(), "학생들은 점수에 따라 오름차순으로 정렬되어야 합니다.");
             }
             previousStudent = student;
         }
