@@ -45,7 +45,7 @@ class GradeQueryServiceTest {
     @Test
     void getScoreByStudentSeq() {
 
-        int studentSeq = 1; // 예시 시퀀스 번호, 실제 데이터에 맞게 조정 필요
+        int studentSeq = 1;
         Score score = gradeQueryService.getScoreByStudentSeq(studentSeq);
 
 
