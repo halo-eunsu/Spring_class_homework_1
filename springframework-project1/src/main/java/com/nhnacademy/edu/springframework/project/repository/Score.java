@@ -1,5 +1,9 @@
 package com.nhnacademy.edu.springframework.project.repository;
 
+
+import org.springframework.stereotype.Component;
+
+
 public class Score {
     private final int studentSeq;
     private final int score;

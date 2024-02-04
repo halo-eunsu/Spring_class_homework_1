@@ -1,11 +1,16 @@
 package com.nhnacademy.edu.springframework.project.repository;
 
+import org.springframework.stereotype.Component;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
+@Component
 public class CsvScores implements Scores {
 
     private List<Score> scoreList = new ArrayList<>();
