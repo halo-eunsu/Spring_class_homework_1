@@ -28,4 +28,12 @@ public class Student {
                 ", score=" + score +
                 '}'+ '\n';
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getSeq() {
+        return seq;
+    }
 }
