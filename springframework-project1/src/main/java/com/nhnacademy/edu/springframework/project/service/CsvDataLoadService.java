@@ -4,7 +4,9 @@ import com.nhnacademy.edu.springframework.project.repository.CsvScores;
 import com.nhnacademy.edu.springframework.project.repository.CsvStudents;
 import com.nhnacademy.edu.springframework.project.repository.Scores;
 import com.nhnacademy.edu.springframework.project.repository.Students;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CsvDataLoadService implements DataLoadService {
     @Override
     public void loadAndMerge() {
