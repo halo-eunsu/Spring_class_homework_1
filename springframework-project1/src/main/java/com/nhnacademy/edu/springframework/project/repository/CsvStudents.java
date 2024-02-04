@@ -33,8 +33,7 @@ public class CsvStudents implements Students {
         return instance;
     }
 
-    // TODO 7 : student.csv 파일에서 데이터를 읽어 클래스 멤버 변수에 추가하는 로직을 구현하세요.
-    // 데이터를 적재하고 읽기 위해서, 적절한 자료구조를 사용하세요.
+
     @Override
     public void load() {
         try (BufferedReader br = new BufferedReader(new FileReader("src/main/resources/data/student.csv"))) {
